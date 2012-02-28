@@ -13,7 +13,7 @@
 		605787A414FB455B00C90A0B /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 605787A314FB455B00C90A0B /* Alert.m */; };
 		605787A714FB460900C90A0B /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605787A614FB460900C90A0B /* AlertController.m */; };
 		605787AA14FB471B00C90A0B /* AlertBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 605787A914FB471B00C90A0B /* AlertBackgroundView.m */; };
-		605787B614FC65D700C90A0B /* imgur.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 605787B514FC65D600C90A0B /* imgur.jpg */; };
+		606B407814FC8B7900F2DE66 /* imgur.png in Resources */ = {isa = PBXBuildFile; fileRef = 606B407714FC8B7900F2DE66 /* imgur.png */; };
 		DD4F7C0913C30F9F00825C6E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4F7C0813C30F9F00825C6E /* Cocoa.framework */; };
 		DD4F7C1513C30F9F00825C6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C1413C30F9F00825C6E /* main.m */; };
 		DD4F7C1C13C30F9F00825C6E /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C1B13C30F9F00825C6E /* ApplicationDelegate.m */; };
@@ -34,8 +34,8 @@
 		605787A614FB460900C90A0B /* AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
 		605787A814FB471B00C90A0B /* AlertBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertBackgroundView.h; sourceTree = "<group>"; };
 		605787A914FB471B00C90A0B /* AlertBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertBackgroundView.m; sourceTree = "<group>"; };
-		605787B314FC657600C90A0B /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Status.png; sourceTree = "<group>"; };
-		605787B514FC65D600C90A0B /* imgur.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imgur.jpg; sourceTree = "<group>"; };
+		606B407714FC8B7900F2DE66 /* imgur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = imgur.png; path = imgur/imgur.png; sourceTree = "<group>"; };
+		606B407A14FC8B9000F2DE66 /* imgur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgur.png; sourceTree = "<group>"; };
 		DD4F7C0413C30F9F00825C6E /* imgur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imgur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4F7C0813C30F9F00825C6E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DD4F7C0B13C30F9F00825C6E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -69,8 +69,7 @@
 		DD4F7BF913C30F9F00825C6E = {
 			isa = PBXGroup;
 			children = (
-				605787B514FC65D600C90A0B /* imgur.jpg */,
-				605787B314FC657600C90A0B /* Status.png */,
+				606B407A14FC8B9000F2DE66 /* imgur.png */,
 				60368E9C14F9E8020092CF27 /* SystemUIPlugin.framework */,
 				DD4F7C0E13C30F9F00825C6E /* Sources */,
 				DD4F7C2813C3123E00825C6E /* User Interface */,
@@ -166,6 +165,7 @@
 		DD4F7C4813C322D800825C6E /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				606B407714FC8B7900F2DE66 /* imgur.png */,
 				DD4F7C4913C322FA00825C6E /* Status.png */,
 				DD4F7C4A13C322FA00825C6E /* StatusHighlighted.png */,
 			);
@@ -226,7 +226,7 @@
 				DD4F7C4B13C322FA00825C6E /* Status.png in Resources */,
 				DD4F7C4C13C322FA00825C6E /* StatusHighlighted.png in Resources */,
 				6057879F14FB43BC00C90A0B /* Alert.xib in Resources */,
-				605787B614FC65D700C90A0B /* imgur.jpg in Resources */,
+				606B407814FC8B7900F2DE66 /* imgur.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +321,7 @@
 		DD4F7C2313C30F9F00825C6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
@@ -328,8 +329,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "imgur/imgur-Prefix.pch";
 				INFOPLIST_FILE = "imgur/imgur-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -337,6 +339,7 @@
 		DD4F7C2413C30F9F00825C6E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
@@ -344,8 +347,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "imgur/imgur-Prefix.pch";
 				INFOPLIST_FILE = "imgur/imgur-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
