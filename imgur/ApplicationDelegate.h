@@ -1,6 +1,8 @@
 #import "StatusItemView.h"
 #import "AlertController.h"
 
+#define API_KEY     @""
+
 @interface ApplicationDelegate : NSObject <NSApplicationDelegate, AlertControllerDelegate> {
     IBOutlet NSMenu *menu;
     IBOutlet NSMenuItem *menuItem;
