@@ -42,7 +42,7 @@ void *kContextActiveAlert = &kContextActiveAlert;
     NSStatusItem *stockStatusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
     _statusItemView = [[StatusItemView alloc] initWithStatusItem:stockStatusItem];
     [_statusItemView setImage:[NSImage imageNamed:@"Status"]];
-    [_statusItemView setAlternateImage:[NSImage imageNamed:@"StatusHighlighted"]];
+    [_statusItemView setAlternateImage:[NSImage imageNamed:@"Status_invert"]];
     [_statusItemView setMenu:menu];
 }
 
