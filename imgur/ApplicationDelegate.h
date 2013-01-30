@@ -13,8 +13,8 @@
     StatusItemView *_statusItemView;
 }
 
-@property (nonatomic, readonly) AlertController *alertController;
-@property (nonatomic, readonly) StatusItemView *statusItem;
+@property (weak, nonatomic, readonly) AlertController *alertController;
+@property (weak, nonatomic, readonly) StatusItemView *statusItem;
 @property (nonatomic, readonly) StatusItemView *statusItemView;
 
 - (void)toggleAlert;

@@ -13,11 +13,8 @@ void *kContextActiveAlert = &kContextActiveAlert;
 - (void)dealloc
 {    
     [_alertController removeObserver:self forKeyPath:@"hasActiveAlert"];
-    [_alertController release];
     [[NSStatusBar systemStatusBar] removeStatusItem:self.statusItemView.statusItem];
-    [_statusItemView release];
 
-    [super dealloc];
 }
 
 #pragma mark -

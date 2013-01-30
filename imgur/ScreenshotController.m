@@ -7,7 +7,7 @@
 - (void)uploadImage:(NSData *)image
 {
     NSString *urlString = @"http://api.imgur.com/2/upload.json";
-    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"POST"];
     
@@ -45,7 +45,7 @@
         
         // set so you can paste it
         NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
-        [pasteBoard declareTypes:[NSArray arrayWithObjects:NSStringPboardType, nil] owner:nil];
+        [pasteBoard declareTypes:@[NSStringPboardType] owner:nil];
         [pasteBoard setString:imgurUrlString forType:NSStringPboardType];
 
         BOOL finished = [[NSWorkspace sharedWorkspace] openURL:imgurUrl];
