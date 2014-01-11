@@ -13,13 +13,16 @@
 		605787A414FB455B00C90A0B /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 605787A314FB455B00C90A0B /* Alert.m */; };
 		605787A714FB460900C90A0B /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605787A614FB460900C90A0B /* AlertController.m */; };
 		605787AA14FB471B00C90A0B /* AlertBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 605787A914FB471B00C90A0B /* AlertBackgroundView.m */; };
-		606B407814FC8B7900F2DE66 /* imgur.png in Resources */ = {isa = PBXBuildFile; fileRef = 606B407714FC8B7900F2DE66 /* imgur.png */; };
+		C9293B7816AE75DF00829127 /* Status_invert.png in Resources */ = {isa = PBXBuildFile; fileRef = C9293B7416AE75DF00829127 /* Status_invert.png */; };
+		C9293B7916AE75DF00829127 /* Status_invert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9293B7516AE75DF00829127 /* Status_invert@2x.png */; };
+		C9293B7A16AE75DF00829127 /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = C9293B7616AE75DF00829127 /* Status.png */; };
+		C9293B7B16AE75DF00829127 /* Status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9293B7716AE75DF00829127 /* Status@2x.png */; };
+		C984680016AE40C200968CA4 /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = C98467FF16AE40C200968CA4 /* icon.iconset */; };
 		DD4F7C0913C30F9F00825C6E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4F7C0813C30F9F00825C6E /* Cocoa.framework */; };
 		DD4F7C1513C30F9F00825C6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C1413C30F9F00825C6E /* main.m */; };
 		DD4F7C1C13C30F9F00825C6E /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C1B13C30F9F00825C6E /* ApplicationDelegate.m */; };
 		DD4F7C1F13C30F9F00825C6E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD4F7C1D13C30F9F00825C6E /* MainMenu.xib */; };
 		DD4F7C3C13C3180800825C6E /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C3B13C3180800825C6E /* StatusItemView.m */; };
-		DD4F7C4B13C322FA00825C6E /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4F7C4913C322FA00825C6E /* Status.png */; };
 		DD4F7C4C13C322FA00825C6E /* StatusHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4F7C4A13C322FA00825C6E /* StatusHighlighted.png */; };
 /* End PBXBuildFile section */
 
@@ -34,8 +37,11 @@
 		605787A614FB460900C90A0B /* AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
 		605787A814FB471B00C90A0B /* AlertBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertBackgroundView.h; sourceTree = "<group>"; };
 		605787A914FB471B00C90A0B /* AlertBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertBackgroundView.m; sourceTree = "<group>"; };
-		606B407714FC8B7900F2DE66 /* imgur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = imgur.png; path = imgur/imgur.png; sourceTree = "<group>"; };
-		606B407A14FC8B9000F2DE66 /* imgur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgur.png; sourceTree = "<group>"; };
+		C9293B7416AE75DF00829127 /* Status_invert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Status_invert.png; path = imgur/Status_invert.png; sourceTree = "<group>"; };
+		C9293B7516AE75DF00829127 /* Status_invert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Status_invert@2x.png"; path = "imgur/Status_invert@2x.png"; sourceTree = "<group>"; };
+		C9293B7616AE75DF00829127 /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Status.png; path = imgur/Status.png; sourceTree = "<group>"; };
+		C9293B7716AE75DF00829127 /* Status@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Status@2x.png"; path = "imgur/Status@2x.png"; sourceTree = "<group>"; };
+		C98467FF16AE40C200968CA4 /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
 		DD4F7C0413C30F9F00825C6E /* imgur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imgur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4F7C0813C30F9F00825C6E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DD4F7C0B13C30F9F00825C6E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -49,7 +55,6 @@
 		DD4F7C1E13C30F9F00825C6E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		DD4F7C3A13C3180800825C6E /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
 		DD4F7C3B13C3180800825C6E /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
-		DD4F7C4913C322FA00825C6E /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Status.png; path = imgur/Status.png; sourceTree = "<group>"; };
 		DD4F7C4A13C322FA00825C6E /* StatusHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StatusHighlighted.png; path = imgur/StatusHighlighted.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +74,6 @@
 		DD4F7BF913C30F9F00825C6E = {
 			isa = PBXGroup;
 			children = (
-				606B407A14FC8B9000F2DE66 /* imgur.png */,
 				60368E9C14F9E8020092CF27 /* SystemUIPlugin.framework */,
 				DD4F7C0E13C30F9F00825C6E /* Sources */,
 				DD4F7C2813C3123E00825C6E /* User Interface */,
@@ -134,6 +138,7 @@
 		DD4F7C2813C3123E00825C6E /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				C98467FF16AE40C200968CA4 /* icon.iconset */,
 				DD4F7C4813C322D800825C6E /* Graphics */,
 				DD4F7C2913C3124300825C6E /* XIBs */,
 			);
@@ -165,8 +170,10 @@
 		DD4F7C4813C322D800825C6E /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				606B407714FC8B7900F2DE66 /* imgur.png */,
-				DD4F7C4913C322FA00825C6E /* Status.png */,
+				C9293B7416AE75DF00829127 /* Status_invert.png */,
+				C9293B7516AE75DF00829127 /* Status_invert@2x.png */,
+				C9293B7616AE75DF00829127 /* Status.png */,
+				C9293B7716AE75DF00829127 /* Status@2x.png */,
 				DD4F7C4A13C322FA00825C6E /* StatusHighlighted.png */,
 			);
 			name = Graphics;
@@ -198,7 +205,7 @@
 		DD4F7BFB13C30F9F00825C6E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = DD4F7BFE13C30F9F00825C6E /* Build configuration list for PBXProject "imgur" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -223,10 +230,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD4F7C1F13C30F9F00825C6E /* MainMenu.xib in Resources */,
-				DD4F7C4B13C322FA00825C6E /* Status.png in Resources */,
 				DD4F7C4C13C322FA00825C6E /* StatusHighlighted.png in Resources */,
 				6057879F14FB43BC00C90A0B /* Alert.xib in Resources */,
-				606B407814FC8B7900F2DE66 /* imgur.png in Resources */,
+				C984680016AE40C200968CA4 /* icon.iconset in Resources */,
+				C9293B7816AE75DF00829127 /* Status_invert.png in Resources */,
+				C9293B7916AE75DF00829127 /* Status_invert@2x.png in Resources */,
+				C9293B7A16AE75DF00829127 /* Status.png in Resources */,
+				C9293B7B16AE75DF00829127 /* Status@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +277,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -281,6 +295,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
@@ -298,6 +313,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -306,6 +325,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
@@ -322,6 +342,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
@@ -331,7 +353,7 @@
 				INFOPLIST_FILE = "imgur/imgur-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -340,6 +362,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
@@ -350,7 +374,7 @@
 				MACOSX_DEPLOYMENT_TARGET = "";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

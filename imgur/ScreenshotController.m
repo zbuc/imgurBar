@@ -7,7 +7,7 @@
 - (void)uploadImage:(NSData *)image
 {
     NSString *urlString = @"http://api.imgur.com/2/upload.json";
-    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"POST"];
     
@@ -28,8 +28,7 @@
     [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"key\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
     
-    NSLog(@"WARNING: imgur api key not set");
-    [body appendData:[@"" dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[API_KEY dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 
     // close form
@@ -41,12 +40,12 @@
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         NSArray *decodedResponse = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         
-        NSString *imgurUrlString = [[[decodedResponse valueForKey:@"upload"] valueForKey:@"links"] valueForKey:@"imgur_page"];
+        NSString *imgurUrlString = [[[decodedResponse valueForKey:@"upload"] valueForKey:@"links"] valueForKey:@"original"];
         NSURL *imgurUrl = [NSURL URLWithString:imgurUrlString];
         
         // set so you can paste it
         NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
-        [pasteBoard declareTypes:[NSArray arrayWithObjects:NSStringPboardType, nil] owner:nil];
+        [pasteBoard declareTypes:@[NSStringPboardType] owner:nil];
         [pasteBoard setString:imgurUrlString forType:NSStringPboardType];
 
         BOOL finished = [[NSWorkspace sharedWorkspace] openURL:imgurUrl];

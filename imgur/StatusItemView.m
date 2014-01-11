@@ -24,7 +24,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         //register for drags
-        NSArray *dragTypes = [NSArray arrayWithObjects:NSURLPboardType, NSFileContentsPboardType, NSFilenamesPboardType, nil];
+        NSArray *dragTypes = @[NSURLPboardType, NSFileContentsPboardType, NSFilenamesPboardType];
         [self registerForDraggedTypes:dragTypes];
     }
     
@@ -40,20 +40,12 @@
     
     if (self != nil)
     {
-        _statusItem = [statusItem retain];
+        _statusItem = statusItem;
         _statusItem.view = self;
     }
     return self;
 }
 
-- (void)dealloc
-{
-    [_statusItem release];
-    [_image release];
-    [_alternateImage release];
-    
-    [super dealloc];
-}
 
 #pragma mark -
 
@@ -107,16 +99,12 @@
 
 - (void)setImage:(NSImage *)newImage
 {
-    [newImage retain];
-    [_image release];
     _image = newImage;
     [self setNeedsDisplay:YES];
 }
 
 - (void)setAlternateImage:(NSImage *)newImage
 {
-    [newImage retain];
-    [_alternateImage release];
     _alternateImage = newImage;
     if (self.isHighlighted)
         [self setNeedsDisplay:YES];
@@ -126,7 +114,7 @@
 //we want to copy the files
 - (NSDragOperation)draggingEntered:(id<NSDraggingInfo>)sender
 {
-    if ([[sender draggingPasteboard] availableTypeFromArray:[NSArray arrayWithObject:NSFilenamesPboardType]]) {
+    if ([[sender draggingPasteboard] availableTypeFromArray:@[NSFilenamesPboardType]]) {
         return NSDragOperationCopy;
     }
     return NSDragOperationNone;
@@ -142,8 +130,8 @@
     
     if([NSBitmapImageRep canInitWithPasteboard:pb]){
         NSURL *url = [NSURL URLFromPasteboard:pb];
-        NSData *data = [[[NSData alloc] initWithContentsOfURL:url] autorelease];
-        [[[ScreenshotController alloc] autorelease] uploadImage:data];
+        NSData *data = [[NSData alloc] initWithContentsOfURL:url];
+        [[ScreenshotController alloc] uploadImage:data];
        
         return YES;
     }   

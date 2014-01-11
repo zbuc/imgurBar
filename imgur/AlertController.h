@@ -16,17 +16,17 @@
 @interface AlertController : NSWindowController <NSWindowDelegate>
 {
     BOOL _hasActiveAlert;
-    AlertBackgroundView *_alertBackgroundView;
-    id<AlertControllerDelegate> _delegate;
+    AlertBackgroundView *__weak _alertBackgroundView;
+    id<AlertControllerDelegate> __unsafe_unretained _delegate;
     NSSearchField *_searchField;
-    NSTextField *_textField;
+    NSTextField *__weak _textField;
 }
 
-@property (assign) IBOutlet AlertBackgroundView *alertBackgroundView;
-@property (assign) IBOutlet NSTextField *textField;
+@property (weak) IBOutlet AlertBackgroundView *alertBackgroundView;
+@property (weak) IBOutlet NSTextField *textField;
 
 @property (nonatomic, assign) BOOL hasActiveAlert;
-@property (nonatomic, readonly) id<AlertControllerDelegate> delegate;
+@property (unsafe_unretained, nonatomic, readonly) id<AlertControllerDelegate> delegate;
 
 - (id)initWithDelegate:(id<AlertControllerDelegate>)delegate;
 
