@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2175E2E6-3623-4D5C-A0A4-D0399F732830</string>
+	<key>IDESourceControlProjectName</key>
+	<string>imgur</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F59CF6B5-D6EF-462C-AEE7-67EC7CF04630</key>
+		<string>https://github.com/zbuc/imgurBar.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>imgur.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F59CF6B5-D6EF-462C-AEE7-67EC7CF04630</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zbuc/imgurBar.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F59CF6B5-D6EF-462C-AEE7-67EC7CF04630</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F59CF6B5-D6EF-462C-AEE7-67EC7CF04630</string>
+			<key>IDESourceControlWCCName</key>
+			<string>imgurBar</string>
+		</dict>
+	</array>
+</dict>
+</plist>
