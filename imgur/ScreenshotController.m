@@ -38,21 +38,35 @@
     [request setHTTPBody:body];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        NSArray *decodedResponse = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        NSDictionary *decodedResponse = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         
-        NSString *imgurUrlString = [[[decodedResponse valueForKey:@"upload"] valueForKey:@"links"] valueForKey:@"original"];
-        NSURL *imgurUrl = [NSURL URLWithString:imgurUrlString];
-        
-        // set so you can paste it
-        NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
-        [pasteBoard declareTypes:@[NSStringPboardType] owner:nil];
-        [pasteBoard setString:imgurUrlString forType:NSStringPboardType];
-
-        BOOL finished = [[NSWorkspace sharedWorkspace] openURL:imgurUrl];
-        
-        if(finished){
-            NSString *alertText = [NSString stringWithFormat:@"%@/%@/", imgurUrlString, @" copied to clipboard."];
-            [(ApplicationDelegate*)[NSApp delegate] flashAlert:alertText];
+        if ([decodedResponse[@"error"] isKindOfClass:NSDictionary.class])
+        {
+            NSUserNotification *notification = [[NSUserNotification alloc] init];
+            notification.title = @"Error image uploading";
+            notification.informativeText = decodedResponse[@"error"][@"message"];
+            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+        }
+        else
+        {
+            NSString *imgurUrlString = [[[decodedResponse valueForKey:@"upload"] valueForKey:@"links"] valueForKey:@"original"];
+            NSURL *imgurUrl = [NSURL URLWithString:imgurUrlString];
+            
+            // set so you can paste it
+            NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
+            [pasteBoard declareTypes:@[NSStringPboardType] owner:nil];
+            [pasteBoard setString:imgurUrlString forType:NSStringPboardType];
+            
+            BOOL finished = [[NSWorkspace sharedWorkspace] openURL:imgurUrl];
+            
+            if(finished){
+                NSUserNotification *notification = [[NSUserNotification alloc] init];
+                notification.title = @"Image uploaded!";
+                notification.informativeText = @"copied to clipboard";
+                notification.contentImage = [[NSImage alloc] initWithData:image];
+                [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+                NSLog(@"Notification delivered");
+            }
         }
     }];
 }

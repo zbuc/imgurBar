@@ -1,9 +1,5 @@
 #import "ApplicationDelegate.h"
 
-#define ALERT_TIME 2.75
-
-void *kContextActiveAlert = &kContextActiveAlert;
-
 @implementation ApplicationDelegate
 
 @synthesize statusItemView = _statusItemView;
@@ -11,24 +7,8 @@ void *kContextActiveAlert = &kContextActiveAlert;
 #pragma mark -
 
 - (void)dealloc
-{    
-    [_alertController removeObserver:self forKeyPath:@"hasActiveAlert"];
-    [[NSStatusBar systemStatusBar] removeStatusItem:self.statusItemView.statusItem];
-
-}
-
-#pragma mark -
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if (context == kContextActiveAlert)
-    {
-        //self.menubarController.hasActiveIcon = self.AlertController.hasActiveAlert;
-    }
-    else
-    {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
+    [[NSStatusBar systemStatusBar] removeStatusItem:self.statusItemView.statusItem];
 }
 
 #pragma mark - NSApplicationDelegate
@@ -48,45 +28,11 @@ void *kContextActiveAlert = &kContextActiveAlert;
     return NSTerminateNow;
 }
 
-- (void)toggleAlert
-{
-    self.alertController.hasActiveAlert = (self.alertController.hasActiveAlert ? NO : YES);
-}
-
-- (void)flashAlert:(NSString *)text
-{
-    [[[[self alertController] textField] cell] setTitle:text];
-    [self toggleAlert];
-
-    dispatch_after(dispatch_walltime(NULL, NSEC_PER_SEC * ALERT_TIME), dispatch_get_main_queue(), ^{
-        [self toggleAlert];
-    });
-}
-
 #pragma mark - Public accessors
 
 - (NSStatusItem *)statusItem
 {
     return self.statusItemView.statusItem;
 }
-
-
-- (AlertController *)alertController
-{
-    if (_alertController == nil)
-    {
-        _alertController = [[AlertController alloc] initWithDelegate:self];
-        [_alertController addObserver:self forKeyPath:@"hasActiveAlert" options:NSKeyValueObservingOptionInitial context:kContextActiveAlert];
-    }
-    return _alertController;
-}
-
-#pragma mark - AlertControllerDelegate
-
-- (StatusItemView *)statusItemViewForAlertController:(AlertController *)controller
-{
-    return self.statusItemView;
-}
-
 
 @end
