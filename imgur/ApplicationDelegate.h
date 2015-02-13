@@ -1,6 +1,6 @@
 #import "StatusItemView.h"
 
-#define API_KEY     @""
+#define CLIENT_ID     @""
 
 @interface ApplicationDelegate : NSObject <NSApplicationDelegate> {
     IBOutlet NSMenu *menu;

@@ -6,10 +6,11 @@
 
 - (void)uploadImage:(NSData *)image
 {
-    NSString *urlString = @"http://api.imgur.com/2/upload.json";
+    NSString *urlString = @"https://api.imgur.com/3/upload.json";
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"POST"];
+    [request setValue:[NSString stringWithFormat:@"Client-ID %@", CLIENT_ID] forHTTPHeaderField:@"Authorization"];
     
     NSMutableData *body = [NSMutableData data];
     
@@ -28,9 +29,6 @@
     [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"key\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
     
-    [body appendData:[API_KEY dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-
     // close form
     [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -49,7 +47,7 @@
         }
         else
         {
-            NSString *imgurUrlString = [[[decodedResponse valueForKey:@"upload"] valueForKey:@"links"] valueForKey:@"original"];
+            NSString *imgurUrlString = [[decodedResponse valueForKey:@"data"] valueForKey:@"link"];
             NSURL *imgurUrl = [NSURL URLWithString:imgurUrlString];
             
             // set so you can paste it
