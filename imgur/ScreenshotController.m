@@ -38,14 +38,7 @@
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         NSDictionary *decodedResponse = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         
-        if ([decodedResponse[@"error"] isKindOfClass:NSDictionary.class])
-        {
-            NSUserNotification *notification = [[NSUserNotification alloc] init];
-            notification.title = @"Error image uploading";
-            notification.informativeText = decodedResponse[@"error"][@"message"];
-            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
-        }
-        else
+        if ([decodedResponse[@"success"] boolValue] == YES)
         {
             NSString *imgurUrlString = [[decodedResponse valueForKey:@"data"] valueForKey:@"link"];
             NSURL *imgurUrl = [NSURL URLWithString:imgurUrlString];
@@ -65,6 +58,13 @@
                 [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
                 NSLog(@"Notification delivered");
             }
+        }
+        else
+        {
+            NSUserNotification *notification = [[NSUserNotification alloc] init];
+            notification.title = @"Error image uploading";
+            notification.informativeText = decodedResponse[@"data"][@"error"];
+            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
         }
     }];
 }
