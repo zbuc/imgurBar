@@ -52,7 +52,7 @@
         
         if(finished){
             NSString *alertText = [NSString stringWithFormat:@"%@/%@/", imgurUrlString, @" copied to clipboard."];
-            [[NSApp delegate] flashAlert:alertText];
+            [(ApplicationDelegate*)[NSApp delegate] flashAlert:alertText];
         }
     }];
 }
