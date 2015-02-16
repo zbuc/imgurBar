@@ -131,7 +131,32 @@
     if([NSBitmapImageRep canInitWithPasteboard:pb]){
         NSURL *url = [NSURL URLFromPasteboard:pb];
         NSData *data = [[NSData alloc] initWithContentsOfURL:url];
-        [[ScreenshotController alloc] uploadImage:data];
+        [[ScreenshotController alloc] uploadImage:data cpmpletitionBlock:^(BOOL success, NSURL *url, NSError *error) {
+            if (success)
+            {
+                // set so you can paste it
+                NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
+                [pasteBoard declareTypes:@[NSStringPboardType] owner:nil];
+                [pasteBoard setString:url.absoluteString forType:NSStringPboardType];
+                
+                BOOL finished = [[NSWorkspace sharedWorkspace] openURL:url];
+                
+                if(finished){
+                    NSUserNotification *notification = [[NSUserNotification alloc] init];
+                    notification.title = @"Image uploaded!";
+                    notification.informativeText = @"copied to clipboard";
+                    notification.contentImage = [[NSImage alloc] initWithData:data];
+                    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+                }
+            }
+            else
+            {
+                NSUserNotification *notification = [[NSUserNotification alloc] init];
+                notification.title = @"Error image uploading";
+                notification.informativeText = error.localizedDescription;
+                [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+            }
+        }];
        
         return YES;
     }   

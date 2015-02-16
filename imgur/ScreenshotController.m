@@ -4,7 +4,7 @@
 
 @implementation ScreenshotController
 
-- (void)uploadImage:(NSData *)image
+- (void)uploadImage:(NSData *)image cpmpletitionBlock:(void (^)(BOOL, NSURL *, NSError *))block
 {
     NSString *urlString = @"https://api.imgur.com/3/upload.json";
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -38,33 +38,22 @@
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         NSDictionary *decodedResponse = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         
-        if ([decodedResponse[@"success"] boolValue] == YES)
+        if (block)
         {
-            NSString *imgurUrlString = [[decodedResponse valueForKey:@"data"] valueForKey:@"link"];
-            NSURL *imgurUrl = [NSURL URLWithString:imgurUrlString];
+            BOOL success = [decodedResponse[@"success"] boolValue];
+            NSURL *imgurUrl;
+            NSError *imgurError;
             
-            // set so you can paste it
-            NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
-            [pasteBoard declareTypes:@[NSStringPboardType] owner:nil];
-            [pasteBoard setString:imgurUrlString forType:NSStringPboardType];
-            
-            BOOL finished = [[NSWorkspace sharedWorkspace] openURL:imgurUrl];
-            
-            if(finished){
-                NSUserNotification *notification = [[NSUserNotification alloc] init];
-                notification.title = @"Image uploaded!";
-                notification.informativeText = @"copied to clipboard";
-                notification.contentImage = [[NSImage alloc] initWithData:image];
-                [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
-                NSLog(@"Notification delivered");
+            if (success)
+            {
+                imgurUrl = [NSURL URLWithString:decodedResponse[@"data"][@"link"]];
             }
-        }
-        else
-        {
-            NSUserNotification *notification = [[NSUserNotification alloc] init];
-            notification.title = @"Error image uploading";
-            notification.informativeText = decodedResponse[@"data"][@"error"];
-            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+            else
+            {
+                imgurError = [NSError errorWithDomain:@"imgur.com" code:[decodedResponse[@"status"] integerValue] userInfo:@{NSLocalizedDescriptionKey:decodedResponse[@"data"][@"error"]}];
+            }
+            
+            block(success, imgurUrl, imgurError);
         }
     }];
 }

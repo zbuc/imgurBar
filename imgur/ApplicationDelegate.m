@@ -2,8 +2,6 @@
 
 @implementation ApplicationDelegate
 
-@synthesize statusItemView = _statusItemView;
-
 #pragma mark -
 
 - (void)dealloc
@@ -20,7 +18,7 @@
     _statusItemView = [[StatusItemView alloc] initWithStatusItem:stockStatusItem];
     [_statusItemView setImage:[NSImage imageNamed:@"Status"]];
     [_statusItemView setAlternateImage:[NSImage imageNamed:@"Status_invert"]];
-    [_statusItemView setMenu:menu];
+    [_statusItemView setMenu:menu]; 
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
