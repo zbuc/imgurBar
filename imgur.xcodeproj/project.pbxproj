@@ -13,13 +13,13 @@
 		C9293B7916AE75DF00829127 /* Status_invert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9293B7516AE75DF00829127 /* Status_invert@2x.png */; };
 		C9293B7A16AE75DF00829127 /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = C9293B7616AE75DF00829127 /* Status.png */; };
 		C9293B7B16AE75DF00829127 /* Status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9293B7716AE75DF00829127 /* Status@2x.png */; };
-		C984680016AE40C200968CA4 /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = C98467FF16AE40C200968CA4 /* icon.iconset */; };
 		DD4F7C0913C30F9F00825C6E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4F7C0813C30F9F00825C6E /* Cocoa.framework */; };
 		DD4F7C1513C30F9F00825C6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C1413C30F9F00825C6E /* main.m */; };
 		DD4F7C1C13C30F9F00825C6E /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C1B13C30F9F00825C6E /* ApplicationDelegate.m */; };
 		DD4F7C1F13C30F9F00825C6E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD4F7C1D13C30F9F00825C6E /* MainMenu.xib */; };
 		DD4F7C3C13C3180800825C6E /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C3B13C3180800825C6E /* StatusItemView.m */; };
 		DD4F7C4C13C322FA00825C6E /* StatusHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4F7C4A13C322FA00825C6E /* StatusHighlighted.png */; };
+		EAC001361A9220ED00B5EE40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAC001351A9220ED00B5EE40 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,6 @@
 		C9293B7516AE75DF00829127 /* Status_invert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Status_invert@2x.png"; path = "imgur/Status_invert@2x.png"; sourceTree = "<group>"; };
 		C9293B7616AE75DF00829127 /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Status.png; path = imgur/Status.png; sourceTree = "<group>"; };
 		C9293B7716AE75DF00829127 /* Status@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Status@2x.png"; path = "imgur/Status@2x.png"; sourceTree = "<group>"; };
-		C98467FF16AE40C200968CA4 /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
 		DD4F7C0413C30F9F00825C6E /* imgur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imgur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4F7C0813C30F9F00825C6E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DD4F7C0B13C30F9F00825C6E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -45,6 +44,7 @@
 		DD4F7C3A13C3180800825C6E /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
 		DD4F7C3B13C3180800825C6E /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
 		DD4F7C4A13C322FA00825C6E /* StatusHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StatusHighlighted.png; path = imgur/StatusHighlighted.png; sourceTree = "<group>"; };
+		EAC001351A9220ED00B5EE40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = imgur/Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +63,7 @@
 		DD4F7BF913C30F9F00825C6E = {
 			isa = PBXGroup;
 			children = (
+				EAC001351A9220ED00B5EE40 /* Images.xcassets */,
 				60368E9C14F9E8020092CF27 /* SystemUIPlugin.framework */,
 				DD4F7C0E13C30F9F00825C6E /* Sources */,
 				DD4F7C2813C3123E00825C6E /* User Interface */,
@@ -125,7 +126,6 @@
 		DD4F7C2813C3123E00825C6E /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
-				C98467FF16AE40C200968CA4 /* icon.iconset */,
 				DD4F7C4813C322D800825C6E /* Graphics */,
 				DD4F7C2913C3124300825C6E /* XIBs */,
 			);
@@ -212,8 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD4F7C1F13C30F9F00825C6E /* MainMenu.xib in Resources */,
+				EAC001361A9220ED00B5EE40 /* Images.xcassets in Resources */,
 				DD4F7C4C13C322FA00825C6E /* StatusHighlighted.png in Resources */,
-				C984680016AE40C200968CA4 /* icon.iconset in Resources */,
 				C9293B7816AE75DF00829127 /* Status_invert.png in Resources */,
 				C9293B7916AE75DF00829127 /* Status_invert@2x.png in Resources */,
 				C9293B7A16AE75DF00829127 /* Status.png in Resources */,
@@ -325,6 +325,7 @@
 		DD4F7C2313C30F9F00825C6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -344,6 +345,7 @@
 		DD4F7C2413C30F9F00825C6E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
