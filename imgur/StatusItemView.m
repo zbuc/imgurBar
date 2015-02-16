@@ -144,7 +144,7 @@
                 if(finished){
                     NSUserNotification *notification = [[NSUserNotification alloc] init];
                     notification.title = @"Image uploaded!";
-                    notification.informativeText = @"copied to clipboard";
+                    notification.informativeText = @"Link copied to clipboard";
                     notification.contentImage = [[NSImage alloc] initWithData:data];
                     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
                 }
