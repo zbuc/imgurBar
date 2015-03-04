@@ -1,34 +1,16 @@
 #import "ApplicationDelegate.h"
-
-#define ALERT_TIME 2.75
-
-void *kContextActiveAlert = &kContextActiveAlert;
+#import "ScreenshotController.h"
 
 @implementation ApplicationDelegate
 
-@synthesize statusItemView = _statusItemView;
+static NSString *kDefaultsScreenshotUploadingKey = @"defaultsScreenshotUploadingKey";
 
 #pragma mark -
 
 - (void)dealloc
-{    
-    [_alertController removeObserver:self forKeyPath:@"hasActiveAlert"];
-    [[NSStatusBar systemStatusBar] removeStatusItem:self.statusItemView.statusItem];
-
-}
-
-#pragma mark -
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if (context == kContextActiveAlert)
-    {
-        //self.menubarController.hasActiveIcon = self.AlertController.hasActiveAlert;
-    }
-    else
-    {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
+    [[NSStatusBar systemStatusBar] removeStatusItem:self.statusItemView.statusItem];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - NSApplicationDelegate
@@ -41,26 +23,13 @@ void *kContextActiveAlert = &kContextActiveAlert;
     [_statusItemView setImage:[NSImage imageNamed:@"Status"]];
     [_statusItemView setAlternateImage:[NSImage imageNamed:@"Status_invert"]];
     [_statusItemView setMenu:menu];
+    
+    [self _updateScreenshotMenuItem];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {    
     return NSTerminateNow;
-}
-
-- (void)toggleAlert
-{
-    self.alertController.hasActiveAlert = (self.alertController.hasActiveAlert ? NO : YES);
-}
-
-- (void)flashAlert:(NSString *)text
-{
-    [[[[self alertController] textField] cell] setTitle:text];
-    [self toggleAlert];
-
-    dispatch_after(dispatch_walltime(NULL, NSEC_PER_SEC * ALERT_TIME), dispatch_get_main_queue(), ^{
-        [self toggleAlert];
-    });
 }
 
 #pragma mark - Public accessors
@@ -70,23 +39,80 @@ void *kContextActiveAlert = &kContextActiveAlert;
     return self.statusItemView.statusItem;
 }
 
+#pragma mark - Screenshots
 
-- (AlertController *)alertController
+- (void)screenshotMenuItemAction:(id)sender
 {
-    if (_alertController == nil)
+    BOOL isScreenshotUploadingEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:kDefaultsScreenshotUploadingKey];
+    isScreenshotUploadingEnabled = !isScreenshotUploadingEnabled;
+    [[NSUserDefaults standardUserDefaults] setBool:isScreenshotUploadingEnabled forKey:kDefaultsScreenshotUploadingKey];
+    [self _updateScreenshotMenuItem];
+}
+
+- (void)metadataQueryUpdated:(NSNotification*)note
+{
+    NSArray *items = note.userInfo[NSMetadataQueryUpdateAddedItemsKey];
+    
+    for (NSMetadataItem *item in items)
     {
-        _alertController = [[AlertController alloc] initWithDelegate:self];
-        [_alertController addObserver:self forKeyPath:@"hasActiveAlert" options:NSKeyValueObservingOptionInitial context:kContextActiveAlert];
+        NSString *imagePath = [item valueForKey:NSMetadataItemPathKey];
+        NSData *data = [[NSData alloc] initWithContentsOfFile:imagePath];
+        
+        [[ScreenshotController alloc] uploadImage:data cpmpletitionBlock:^(BOOL success, NSURL *url, NSError *error) {
+            if (success)
+            {
+                // set so you can paste it
+                NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
+                [pasteBoard declareTypes:@[NSStringPboardType] owner:nil];
+                [pasteBoard setString:url.absoluteString forType:NSStringPboardType];
+                
+                BOOL finished = [[NSWorkspace sharedWorkspace] openURL:url];
+                
+                if(finished) {
+                    NSUserNotification *notification = [[NSUserNotification alloc] init];
+                    notification.title = @"Image uploaded!";
+                    notification.informativeText = @"Link copied to clipboard";
+                    notification.contentImage = [[NSImage alloc] initWithData:data];
+                    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+                    
+                    [[NSFileManager defaultManager] removeItemAtPath:imagePath error:&error];
+                }
+            }
+            else
+            {
+                NSUserNotification *notification = [[NSUserNotification alloc] init];
+                notification.title = @"Error image uploading";
+                notification.informativeText = error.localizedDescription;
+                [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+            }
+        }];
     }
-    return _alertController;
 }
 
-#pragma mark - AlertControllerDelegate
-
-- (StatusItemView *)statusItemViewForAlertController:(AlertController *)controller
+- (void)_updateScreenshotMenuItem
 {
-    return self.statusItemView;
+    BOOL isScreenshotUploadingEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:kDefaultsScreenshotUploadingKey];
+    
+    if (isScreenshotUploadingEnabled)
+    {
+        if (!_metadataQuery)
+        {
+            _metadataQuery = [[NSMetadataQuery alloc] init];
+            [_metadataQuery setDelegate:self];
+            [_metadataQuery setPredicate:[NSPredicate predicateWithFormat:@"kMDItemIsScreenCapture = 1"]];
+        }
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(metadataQueryUpdated:) name:NSMetadataQueryDidUpdateNotification object:_metadataQuery];
+        
+        [_metadataQuery startQuery];
+    }
+    else
+    {
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
+        [_metadataQuery stopQuery];
+    }
+    
+    [screenshotsMenuItem setState:isScreenshotUploadingEnabled];
 }
-
 
 @end

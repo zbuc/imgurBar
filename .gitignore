@@ -21,3 +21,5 @@ upload*.sh
 *.rb
 pkg/
 bin
+
+*.xccheckout

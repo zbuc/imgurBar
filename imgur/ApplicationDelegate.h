@@ -1,23 +1,17 @@
 #import "StatusItemView.h"
-#import "AlertController.h"
 
-#define API_KEY     @""
+#define CLIENT_ID     @""
 
-@interface ApplicationDelegate : NSObject <NSApplicationDelegate, AlertControllerDelegate> {
+@interface ApplicationDelegate : NSObject <NSApplicationDelegate, NSMetadataQueryDelegate> {
     IBOutlet NSMenu *menu;
     IBOutlet NSMenuItem *menuItem;
-
-@private;
-    AlertController *_alertController;
-    StatusItemView *statusItem;
-    StatusItemView *_statusItemView;
+    IBOutlet NSMenuItem *screenshotsMenuItem;
+    
+    NSMetadataQuery *_metadataQuery;
 }
 
-@property (weak, nonatomic, readonly) AlertController *alertController;
-@property (weak, nonatomic, readonly) StatusItemView *statusItem;
 @property (nonatomic, readonly) StatusItemView *statusItemView;
 
-- (void)toggleAlert;
-- (void)flashAlert:(NSString *) text;
+- (IBAction)screenshotMenuItemAction:(id)sender;
 
 @end

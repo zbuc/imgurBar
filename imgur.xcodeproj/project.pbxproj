@@ -9,39 +9,27 @@
 /* Begin PBXBuildFile section */
 		60368E9D14F9E8020092CF27 /* SystemUIPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60368E9C14F9E8020092CF27 /* SystemUIPlugin.framework */; };
 		60368EAA14FA10190092CF27 /* ScreenshotController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60368EA914FA10190092CF27 /* ScreenshotController.m */; };
-		6057879F14FB43BC00C90A0B /* Alert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6057879E14FB43BC00C90A0B /* Alert.xib */; };
-		605787A414FB455B00C90A0B /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 605787A314FB455B00C90A0B /* Alert.m */; };
-		605787A714FB460900C90A0B /* AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605787A614FB460900C90A0B /* AlertController.m */; };
-		605787AA14FB471B00C90A0B /* AlertBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 605787A914FB471B00C90A0B /* AlertBackgroundView.m */; };
 		C9293B7816AE75DF00829127 /* Status_invert.png in Resources */ = {isa = PBXBuildFile; fileRef = C9293B7416AE75DF00829127 /* Status_invert.png */; };
 		C9293B7916AE75DF00829127 /* Status_invert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9293B7516AE75DF00829127 /* Status_invert@2x.png */; };
 		C9293B7A16AE75DF00829127 /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = C9293B7616AE75DF00829127 /* Status.png */; };
 		C9293B7B16AE75DF00829127 /* Status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9293B7716AE75DF00829127 /* Status@2x.png */; };
-		C984680016AE40C200968CA4 /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = C98467FF16AE40C200968CA4 /* icon.iconset */; };
 		DD4F7C0913C30F9F00825C6E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4F7C0813C30F9F00825C6E /* Cocoa.framework */; };
 		DD4F7C1513C30F9F00825C6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C1413C30F9F00825C6E /* main.m */; };
 		DD4F7C1C13C30F9F00825C6E /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C1B13C30F9F00825C6E /* ApplicationDelegate.m */; };
 		DD4F7C1F13C30F9F00825C6E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD4F7C1D13C30F9F00825C6E /* MainMenu.xib */; };
 		DD4F7C3C13C3180800825C6E /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C3B13C3180800825C6E /* StatusItemView.m */; };
 		DD4F7C4C13C322FA00825C6E /* StatusHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4F7C4A13C322FA00825C6E /* StatusHighlighted.png */; };
+		EAC001361A9220ED00B5EE40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAC001351A9220ED00B5EE40 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		60368E9C14F9E8020092CF27 /* SystemUIPlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemUIPlugin.framework; path = ../../../../System/Library/PrivateFrameworks/SystemUIPlugin.framework; sourceTree = "<group>"; };
 		60368EA814FA10190092CF27 /* ScreenshotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenshotController.h; sourceTree = "<group>"; };
 		60368EA914FA10190092CF27 /* ScreenshotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenshotController.m; sourceTree = "<group>"; };
-		6057879E14FB43BC00C90A0B /* Alert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Alert.xib; sourceTree = "<group>"; };
-		605787A214FB455B00C90A0B /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alert.h; sourceTree = "<group>"; };
-		605787A314FB455B00C90A0B /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alert.m; sourceTree = "<group>"; };
-		605787A514FB460900C90A0B /* AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertController.h; sourceTree = "<group>"; };
-		605787A614FB460900C90A0B /* AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertController.m; sourceTree = "<group>"; };
-		605787A814FB471B00C90A0B /* AlertBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertBackgroundView.h; sourceTree = "<group>"; };
-		605787A914FB471B00C90A0B /* AlertBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertBackgroundView.m; sourceTree = "<group>"; };
 		C9293B7416AE75DF00829127 /* Status_invert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Status_invert.png; path = imgur/Status_invert.png; sourceTree = "<group>"; };
 		C9293B7516AE75DF00829127 /* Status_invert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Status_invert@2x.png"; path = "imgur/Status_invert@2x.png"; sourceTree = "<group>"; };
 		C9293B7616AE75DF00829127 /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Status.png; path = imgur/Status.png; sourceTree = "<group>"; };
 		C9293B7716AE75DF00829127 /* Status@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Status@2x.png"; path = "imgur/Status@2x.png"; sourceTree = "<group>"; };
-		C98467FF16AE40C200968CA4 /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
 		DD4F7C0413C30F9F00825C6E /* imgur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imgur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4F7C0813C30F9F00825C6E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DD4F7C0B13C30F9F00825C6E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -56,6 +44,7 @@
 		DD4F7C3A13C3180800825C6E /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
 		DD4F7C3B13C3180800825C6E /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
 		DD4F7C4A13C322FA00825C6E /* StatusHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StatusHighlighted.png; path = imgur/StatusHighlighted.png; sourceTree = "<group>"; };
+		EAC001351A9220ED00B5EE40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = imgur/Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +63,7 @@
 		DD4F7BF913C30F9F00825C6E = {
 			isa = PBXGroup;
 			children = (
+				EAC001351A9220ED00B5EE40 /* Images.xcassets */,
 				60368E9C14F9E8020092CF27 /* SystemUIPlugin.framework */,
 				DD4F7C0E13C30F9F00825C6E /* Sources */,
 				DD4F7C2813C3123E00825C6E /* User Interface */,
@@ -129,8 +119,6 @@
 				DD4F7C1B13C30F9F00825C6E /* ApplicationDelegate.m */,
 				60368EA814FA10190092CF27 /* ScreenshotController.h */,
 				60368EA914FA10190092CF27 /* ScreenshotController.m */,
-				605787A514FB460900C90A0B /* AlertController.h */,
-				605787A614FB460900C90A0B /* AlertController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -138,7 +126,6 @@
 		DD4F7C2813C3123E00825C6E /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
-				C98467FF16AE40C200968CA4 /* icon.iconset */,
 				DD4F7C4813C322D800825C6E /* Graphics */,
 				DD4F7C2913C3124300825C6E /* XIBs */,
 			);
@@ -149,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				DD4F7C1D13C30F9F00825C6E /* MainMenu.xib */,
-				6057879E14FB43BC00C90A0B /* Alert.xib */,
 			);
 			name = XIBs;
 			sourceTree = "<group>";
@@ -157,12 +143,8 @@
 		DD4F7C3913C317EC00825C6E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				605787A214FB455B00C90A0B /* Alert.h */,
-				605787A314FB455B00C90A0B /* Alert.m */,
 				DD4F7C3A13C3180800825C6E /* StatusItemView.h */,
 				DD4F7C3B13C3180800825C6E /* StatusItemView.m */,
-				605787A814FB471B00C90A0B /* AlertBackgroundView.h */,
-				605787A914FB471B00C90A0B /* AlertBackgroundView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -205,7 +187,7 @@
 		DD4F7BFB13C30F9F00825C6E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0610;
 			};
 			buildConfigurationList = DD4F7BFE13C30F9F00825C6E /* Build configuration list for PBXProject "imgur" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -230,9 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD4F7C1F13C30F9F00825C6E /* MainMenu.xib in Resources */,
+				EAC001361A9220ED00B5EE40 /* Images.xcassets in Resources */,
 				DD4F7C4C13C322FA00825C6E /* StatusHighlighted.png in Resources */,
-				6057879F14FB43BC00C90A0B /* Alert.xib in Resources */,
-				C984680016AE40C200968CA4 /* icon.iconset in Resources */,
 				C9293B7816AE75DF00829127 /* Status_invert.png in Resources */,
 				C9293B7916AE75DF00829127 /* Status_invert@2x.png in Resources */,
 				C9293B7A16AE75DF00829127 /* Status.png in Resources */,
@@ -251,9 +232,6 @@
 				DD4F7C1C13C30F9F00825C6E /* ApplicationDelegate.m in Sources */,
 				DD4F7C3C13C3180800825C6E /* StatusItemView.m in Sources */,
 				60368EAA14FA10190092CF27 /* ScreenshotController.m in Sources */,
-				605787A414FB455B00C90A0B /* Alert.m in Sources */,
-				605787A714FB460900C90A0B /* AlertController.m in Sources */,
-				605787AA14FB471B00C90A0B /* AlertBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,8 +259,10 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -320,9 +300,11 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -347,6 +329,7 @@
 		DD4F7C2313C30F9F00825C6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -366,6 +349,7 @@
 		DD4F7C2413C30F9F00825C6E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
